@@ -14,8 +14,8 @@ var Task = React.createClass({
   },
 
   handleToggle: function(task) {
-   
-    ActionCreator.toggleTask(task, this.refs.checkbox.getChecked());
+    task.completed = this.refs.checkbox.getChecked();
+    ActionCreator.toggleTask(task);
     
   },
 

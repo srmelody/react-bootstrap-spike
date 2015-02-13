@@ -18,7 +18,6 @@ module.exports = {
     console.warn('completeTask action not yet implemented...');
      AppDispatcher.handleViewAction({
       type: Constants.ActionTypes.TOGGLE_TASK,
-      text: text,
       task: task
     });
   }

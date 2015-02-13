@@ -2,6 +2,7 @@ var AppDispatcher = require('../dispatchers/AppDispatcher');
 var EventEmitter = require('events').EventEmitter;
 var Constants = require('../constants/AppConstants');
 var assign = require('object-assign');
+var _ = require('lodash');
 
 // data storage
 var _data = [];
@@ -13,10 +14,8 @@ function addItem(title, completed=false) {
 
 function toggleTask(task) {
 
-  var task = _data.find( item => item.title === title );
-  if (task) {
-    task.completed = completed;
-  }
+  var foundTask = _.remove(_data, item => item.title === task.title );
+ 
 }
 
 
