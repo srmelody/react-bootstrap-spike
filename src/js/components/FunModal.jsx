@@ -2,7 +2,10 @@ var React = require('react');
 
 var Modal = require('react-bootstrap/Modal');
 var Button = require('react-bootstrap/Button');
+var Tooltip = require('react-bootstrap/Tooltip');
+var Popover = require('react-bootstrap/Popover');
 
+var OverlayTrigger = require('react-bootstrap/OverlayTrigger');
 
 var FunModal = React.createClass({
   render: function() {
@@ -14,10 +17,14 @@ var FunModal = React.createClass({
             <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
 
             <h4>Popover in a modal</h4>
-            <p>TODO</p>
+            <OverlayTrigger trigger="click" placement="left" overlay={<Popover title="Popover left"><strong>Cheese Popovers!</strong> Check this info.</Popover>}>
+              <Button bsStyle="default">I like popovers!</Button>
+            </OverlayTrigger>
 
             <h4>Tooltips in a modal</h4>
-            <p>TODO</p>
+            <OverlayTrigger trigger="click" placement="left" overlay={<Tooltip title="Tooltip left"><strong>Tooltips!</strong> Check this info.</Tooltip>}>
+              <Button bsStyle="default">I like tooltips!</Button>
+            </OverlayTrigger>
 
             <hr />
 

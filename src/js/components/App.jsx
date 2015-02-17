@@ -8,6 +8,13 @@ var Grid = require('react-bootstrap/Grid');
 var Col = require('react-bootstrap/Col');
 var Row = require('react-bootstrap/Row');
 
+var MenuItem = require('react-bootstrap/MenuItem');
+var DropdownButton = require('react-bootstrap/DropdownButton');
+var Glyphicon = require('react-bootstrap/Glyphicon');
+
+
+
+
 var Jumbotron = require('react-bootstrap/Jumbotron');
 var TaskList = require('./TaskList.jsx');
 var FunModal = require('./FunModal.jsx');
@@ -54,6 +61,7 @@ var App = React.createClass({
             Below is a list of tasks you can implement to better grasp the patterns behind Flux.<br />
             Most features are left unimplemented with clues to guide you on the learning process.
           </p>
+
         </Jumbotron>
                 <Grid>
                   <Row>
@@ -76,8 +84,13 @@ var App = React.createClass({
         <Button onClick={this.handleClearListClick} bsStyle="danger">Clear List</Button>
 
         You get a badge! <Badge>42</Badge>
-       GRIDS!!
-         
+      
+
+
+        <DropdownButton title="Dropdown">
+          <MenuItem onClick={this.handleAddNewClick} eventKey="1">Add new</MenuItem>
+          <MenuItem eventKey="2">Dropdown link</MenuItem>
+      </DropdownButton> 
       </div>
     );
   }
