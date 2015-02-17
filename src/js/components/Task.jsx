@@ -23,8 +23,9 @@ var Task = React.createClass({
     var task = this.props.task;
     return (
       <ListGroupItem>
+
         <Input type="checkbox" ref="checkbox" checked={task.completed}
-          onChange={this.handleToggle.bind(this, task)} label={task.title} />
+          onChange={this.handleToggle.bind(this, task)} labelClassName={task.completed ? 'completed-task' : 'incomplete-task'} label={task.title} />
       </ListGroupItem>
     );
   }

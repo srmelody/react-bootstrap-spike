@@ -45,6 +45,9 @@ var App = React.createClass({
       ActionCreator.addItem(title);
     }
   },
+  handleRemoveCompletedItems: function(e) {
+    ActionCreator.removeCompletedItems();
+  },
    
   handleClearListClick: function(e) {
     ActionCreator.clearList();
@@ -63,7 +66,26 @@ var App = React.createClass({
           </p>
 
         </Jumbotron>
-                <Grid>
+
+        <ModalTrigger modal={<FunModal />}>
+          <Button bsStyle="warning" >Show a modal</Button>
+        </ModalTrigger>
+        <TaskList tasks={this.state.tasks} />
+
+        <Button onClick={this.handleAddNewClick} bsStyle="primary">Add New</Button>
+        <Button onClick={this.handleClearListClick} bsStyle="danger">Clear List</Button>
+          <Button onClick={this.handleRemoveCompletedItems} bsStyle="info">Remove Completed Items</Button>
+      
+        You get a badge! <Badge>42</Badge>
+      
+
+
+        <DropdownButton title="Dropdown">
+          <MenuItem onClick={this.handleAddNewClick} eventKey="1">Add new</MenuItem>
+          <MenuItem eventKey="2">Dropdown link</MenuItem>
+      </DropdownButton> 
+
+      <Grid>
                   <Row>
                     <Col xs={5}>Grid is here</Col>
                     <Col xs={7}>column is here</Col>
@@ -75,22 +97,14 @@ var App = React.createClass({
                   </Row>
 
                 </Grid>
-        <ModalTrigger modal={<FunModal />}>
-          <Button bsStyle="warning" >Show a modal</Button>
-        </ModalTrigger>
-        <TaskList tasks={this.state.tasks} />
 
-        <Button onClick={this.handleAddNewClick} bsStyle="primary">Add New</Button>
-        <Button onClick={this.handleClearListClick} bsStyle="danger">Clear List</Button>
-
-        You get a badge! <Badge>42</Badge>
-      
-
-
-        <DropdownButton title="Dropdown">
-          <MenuItem onClick={this.handleAddNewClick} eventKey="1">Add new</MenuItem>
-          <MenuItem eventKey="2">Dropdown link</MenuItem>
-      </DropdownButton> 
+                
+                <div className="container">
+                  <div className="row">
+                    <div className="col-xs-2">Grid with col classes xs-2</div>
+                    <div className="col-xs-10">Second cell with class xs-10</div>
+                  </div>
+                </div>
       </div>
     );
   }

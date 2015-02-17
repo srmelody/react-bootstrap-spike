@@ -7,6 +7,7 @@ module.exports = {
   ActionTypes: keyMirror({
     ADD_TASK: null,
     TOGGLE_TASK: null,
+    REMOVE_COMPLETED_ITEMS: null
   }),
 
   ActionSources: keyMirror({

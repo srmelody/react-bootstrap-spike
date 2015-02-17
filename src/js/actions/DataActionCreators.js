@@ -13,9 +13,13 @@ module.exports = {
   clearList: function() {
     console.warn('clearList action not yet implemented...');
   },
-
+  removeCompletedItems: function() {
+     AppDispatcher.handleViewAction({
+      type: Constants.ActionTypes.REMOVE_COMPLETED_ITEMS
+     
+    });
+  },
   toggleTask: function(task) {
-    console.warn('completeTask action not yet implemented...');
      AppDispatcher.handleViewAction({
       type: Constants.ActionTypes.TOGGLE_TASK,
       task: task

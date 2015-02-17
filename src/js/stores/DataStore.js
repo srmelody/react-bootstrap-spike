@@ -14,8 +14,12 @@ function addItem(title, completed=false) {
 
 function toggleTask(task) {
 
-  var foundTask = _.remove(_data, item => item.title === task.title );
+  //var foundTask = _.remove(_data, item => item.title === task.title );
  
+}
+
+function removeCompletedItems() {
+  _.remove(_data, item => item.completed );  
 }
 
 
@@ -58,8 +62,12 @@ var DataStore = assign(EventEmitter.prototype, {
         }
         break;
       case Constants.ActionTypes.TOGGLE_TASK:
-     //   var text = action.text.trim();
         toggleTask(action.task);
+        DataStore.emitChange();
+        break;
+
+      case Constants.ActionTypes.REMOVE_COMPLETED_ITEMS: 
+        removeCompletedItems();
         DataStore.emitChange();
         break;
 
